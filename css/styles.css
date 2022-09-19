@@ -17,9 +17,11 @@
   --font-w-500: 500;
   --font-w-700: 700;
   --font-w-900: 900;
+  --font-sz-12: 12px;
   --font-sz-14: 14px;
   --font-sz-16: 16px;
   --font-sz-18: 18px;
+  --font-sz-20: 20px;
   --font-sz-26: 26px;
   --font-sz-36: 36px;
   --font-sz-44: 44px;
@@ -235,66 +237,6 @@ p {
   background-color: var(--accent-blue-color);
   border: none;
   border-radius: 4px;
-
-  cursor: pointer;
-}
-
-/* Modal Window =========================================================*/
-
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  background-color: var(--backdrop-color);
-
-  visibility: visible;
-  opacity: 1;
-  transition: visibility var(--time) var(--timing-function),
-    opacity var(--time) var(--timing-function);
-}
-
-.backdrop.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 0;
-}
-
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  display: flex;
-  justify-content: flex-end;
-  width: 528px;
-  height: 581px;
-  background-color: var(--white-color);
-  border-radius: 4px;
-
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-
-  transition: transform var(--time) var(--timing-function),
-    opacity var(--time) var(--timing-function);
-}
-
-.modal-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  background-color: var(--white-color);
-  border-color: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
 
   cursor: pointer;
 }
@@ -536,6 +478,7 @@ p {
   flex-direction: column;
 
   padding-top: 72px;
+  margin-right: 93px;
   width: 206px;
   height: 252px;
 }
@@ -602,6 +545,245 @@ p {
 .contacts-list .mail,
 .contacts-list .tel {
   color: var(--transp-color);
+}
+
+/* subsctiption  ================================ */
+
+.subscription {
+  padding-top: 73px;
+  width: 570px;
+  height: 86px;
+}
+
+.subscription-title {
+  margin-bottom: 20px;
+
+  font-size: inherit;
+  line-height: 1.14;
+  text-transform: uppercase;
+  
+  color: var(--white-color);
+}
+
+.subscription-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subscription-input {
+  width: 358px;
+  height: 50px;
+  padding: 15px 16px;
+
+  font-family: inherit;
+  font-size: var(--font-sz-16);
+  line-height: 1.25;
+
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #2F303A;
+  
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  border-radius: 4px;
+}
+
+.subscription-btn {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  padding: 10px 62px 10px 28px;
+  
+  font-family: inherit;
+  font-weight: var(--font-w-700);
+  font-size: var(--font-sz-16);
+  line-height: 1.88;
+  letter-spacing: var(--let-sp06);
+
+  color: var(--white-color);
+  background-color: var(--accent-blue-color);
+  border-radius: 4px;
+  border: none;
+
+  cursor: pointer;
+}
+
+.subscription-icon {
+  position: absolute;
+  top: 13px;
+  right: 28px;
+}
+
+/* Modal Window =========================================================*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--backdrop-color);
+
+  visibility: visible;
+  opacity: 1;
+  transition: visibility var(--time) var(--timing-function),
+    opacity var(--time) var(--timing-function);
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  display: flex;
+  justify-content: flex-end;
+  width: 528px;
+  height: 581px;
+  padding: 40px;
+
+  background-color: var(--white-color);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+
+  transition: transform var(--time) var(--timing-function),
+    opacity var(--time) var(--timing-function);
+}
+
+.modal-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--white-color);
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  cursor: pointer;
+  transition: fill var(--time) var(--timing-function);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  fill: var(--accent-blue-color);
+}
+
+.form-title {
+  margin-bottom: 12px;
+
+  font-family: 'Roboto';
+  font-weight: var(--font-w-700);
+  font-size: var(--font-sz-20);
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: var(--let-sp03);
+
+  color: var(--main-text-color);
+}
+
+.form-field:not(:last-child) {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.label-name {
+  display: block;
+  margin-bottom: 4px;
+
+  font-size: var(--font-sz-12);
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: var(--light-text-color);
+}
+
+.label-input {
+  width: 448px;
+  height: 40px;
+  padding: 0 40px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.modal-icon {
+  position: absolute;
+  top: 29px;
+  left: 12px;
+
+  fill: var(--main-text-color);
+}
+
+.label-comment {
+  width: 448px;
+  height: 120px;
+  padding: 12px 16px;
+  resize: none;
+
+  font-family: inherit;
+  font-size: var(--font-sz-12);
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.agreement-text {
+  display: inline-block;
+  margin: 20px 0 30px;
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.71;
+  letter-spacing: var(--let-sp03);
+
+  color: var(--light-text-color);
+}
+
+.agreement-text > a {
+  color: var(--accent-blue-color);
+}
+
+.button-send {
+  display: block;
+  width: 200px;
+  height: 50px;
+  padding: 10px 52px;
+  margin: 0 auto;
+  
+  font-family: inherit;
+  font-weight: var(--font-w-700);
+  font-size: var(--font-sz-16);
+  line-height: 1.88;
+  letter-spacing: var(--let-sp06);
+
+  color: var(--white-color);
+  background-color: var(--accent-blue-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+
+  cursor: pointer;
 }
 
 /* Page Portfolio.html ============================================================*/
