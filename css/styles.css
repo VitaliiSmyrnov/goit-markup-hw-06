@@ -698,10 +698,10 @@ p {
   color: var(--main-text-color);
 }
 
-.form-field:not(:last-child) {
+.form-field {
   position: relative;
   display: block;
-  margin-bottom: 10px;
+  
 }
 
 .label-name {
@@ -719,6 +719,7 @@ p {
   width: 448px;
   height: 40px;
   padding: 0 40px;
+  margin-bottom: 10px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -726,8 +727,8 @@ p {
 
 .modal-icon {
   position: absolute;
-  top: 29px;
-  left: 12px;
+  /* top: 29px; */
+  left: 0px;
 
   fill: var(--main-text-color);
 }
@@ -738,12 +739,12 @@ p {
   padding: 12px 16px;
   resize: none;
 
-  font-family: inherit;
+  /* font-family: inherit;
   font-size: var(--font-sz-12);
   line-height: 1.17;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.01em; */
 
-  color: rgba(117, 117, 117, 0.5);
+  /* color: rgba(117, 117, 117, 0.5); */
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 }
