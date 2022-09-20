@@ -551,18 +551,8 @@ p {
 
 .subscription {
   padding-top: 73px;
-  width: 570px;
+  max-width: 570px;
   height: 86px;
-}
-
-.subscription-title {
-  margin-bottom: 20px;
-
-  font-size: inherit;
-  line-height: 1.14;
-  text-transform: uppercase;
-  
-  color: var(--white-color);
 }
 
 .subscription-form {
@@ -575,16 +565,21 @@ p {
   width: 358px;
   height: 50px;
   padding: 15px 16px;
-
+  margin-right: 12px;
+  
   font-family: inherit;
   font-size: var(--font-sz-16);
   line-height: 1.25;
-
-  color: rgba(255, 255, 255, 0.6);
+  
+  color: rgba(255, 255, 255, 0.9);
   background-color: #2F303A;
   
   border: 1px solid rgba(255, 255, 255, 0.3); 
   border-radius: 4px;
+}
+
+.subscription-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .subscription-btn {
@@ -598,13 +593,25 @@ p {
   font-size: var(--font-sz-16);
   line-height: 1.88;
   letter-spacing: var(--let-sp06);
-
+  
   color: var(--white-color);
   background-color: var(--accent-blue-color);
   border-radius: 4px;
   border: none;
-
+  
   cursor: pointer;
+}
+
+.subscription-title {
+  display: block;
+  margin-bottom: 20px;
+
+  font-size: inherit;
+  line-height: 1.14;
+  font-weight: var(--font-w-700);
+  text-transform: uppercase;
+  
+  color: var(--white-color);
 }
 
 .subscription-icon {
@@ -701,7 +708,6 @@ p {
 .form-field {
   position: relative;
   display: block;
-  
 }
 
 .label-name {
@@ -721,16 +727,32 @@ p {
   padding: 0 40px;
   margin-bottom: 10px;
 
+  font-family: inherit;
+  font-size: inherit;
+ 
+  color: var(--main-text-color);
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition: border-color var(--time) var(--timing-function);
+}
+
+.label-input:focus  {
+  border: 1px solid var(--accent-blue-color);
+  outline: none;
 }
 
 .modal-icon {
   position: absolute;
-  /* top: 29px; */
-  left: 0px;
-
+  left: 12px;
+  bottom: 21px;
+  
   fill: var(--main-text-color);
+  transition: fill var(--time) var(--timing-function);
+}
+
+.label-input:focus + .modal-icon {
+  fill: var(--accent-blue-color);
 }
 
 .label-comment {
@@ -739,20 +761,63 @@ p {
   padding: 12px 16px;
   resize: none;
 
-  /* font-family: inherit;
-  font-size: var(--font-sz-12);
+  font-family: inherit;
+  font-size: inherit;
   line-height: 1.17;
-  letter-spacing: 0.01em; */
+  letter-spacing: 0.01em;
 
-  /* color: rgba(117, 117, 117, 0.5); */
+  color: var(--main-text-color);
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition: border-color var(--time) var(--timing-function);
+}
+
+.label-comment:focus {
+  border: 1px solid var(--accent-blue-color);
+  outline: none;
+}
+
+.label-comment::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+  font-size: var(--font-sz-12);
+}
+
+.form-agreement {
+  display: block;
+  text-align: center;
+  margin: 20px 0 30px;
+
+  cursor: pointer;
+}
+
+.form-agreement input:checked + .form-check {
+  background-color: var(--accent-blue-color);
+  border-color: var(--accent-blue-color);
+}
+
+.form-check {
+  position: relative;
+  top: 2px;
+  left: -6px;
+
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--black-color);
+  border-radius: 2px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.icon-check {
+  position: absolute;
 }
 
 .agreement-text {
-  display: inline-block;
-  margin: 20px 0 30px;
-
   font-family: inherit;
   font-size: inherit;
   line-height: 1.71;
