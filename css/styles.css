@@ -791,6 +791,10 @@ p {
   cursor: pointer;
 }
 
+.form-agreement input:focus + .form-check {
+  border-color: var(--accent-blue-color);
+}
+
 .form-agreement input:checked + .form-check {
   background-color: var(--accent-blue-color);
   border-color: var(--accent-blue-color);
